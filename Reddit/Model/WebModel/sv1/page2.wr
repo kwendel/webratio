@@ -1,0 +1,101 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="715" gr:y="60" id="sv1#page2" name="Login/Register" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="115" gr:y="10" id="sv1#page2#enu2" name="Register" customDescriptor="false" fieldOrder="sv1#page2#enu2#fld3 sv1#page2#enu2#fld4 sv1#page2#enu2#fld5 sv1#page2#enu2#fld1 sv1#page2#enu2#sfld1" linkOrder="sv1#page2#enu2#ln10">
+      <Field id="sv1#page2#enu2#fld3" name="Nickname" type="string" modifiable="true" contentType="text/plain"/>
+      <Field id="sv1#page2#enu2#fld4" name="Email" type="string" modifiable="true" contentType="text/plain"/>
+      <Field id="sv1#page2#enu2#fld5" name="Password" type="password" modifiable="true"/>
+      <Field id="sv1#page2#enu2#fld1" name="Username" type="string" modifiable="true"/>
+      <SelectionField id="sv1#page2#enu2#sfld1" name="Group" type="integer"/>
+      <Field id="sv1#page2#enu2#fld2" name="LastActivity" type="timestamp" modifiable="true" preloaded="true" hidden="true"/>
+      <Field id="sv1#page2#enu2#fld6" name="Registration" type="timestamp" modifiable="true" preloaded="true" hidden="true"/>
+      <Link id="sv1#page2#enu2#ln10" name="Register" to="sv1#miu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page2#enu2#ln10#par57" name="Email_Email" source="sv1#page2#enu2#fld4" target="sv1#miu1.mov1#opm1#icu1#icp7"/>
+        <LinkParameter id="sv1#page2#enu2#ln10#par58" name="Group_Group" source="sv1#page2#enu2#sfld1" target="sv1#miu1.mov1#opm1#icu1#icp6"/>
+        <LinkParameter id="sv1#page2#enu2#ln10#par59" name="LastActivity_LastActivity" source="sv1#page2#enu2#fld2" target="sv1#miu1.mov1#opm1#icu1#icp8"/>
+        <LinkParameter id="sv1#page2#enu2#ln10#par60" name="Nickname_Nickname" source="sv1#page2#enu2#fld3" target="sv1#miu1.mov1#opm1#icu1#icp1"/>
+        <LinkParameter id="sv1#page2#enu2#ln10#par61" name="Password_Password" source="sv1#page2#enu2#fld5" target="sv1#miu1.mov1#opm1#icu1#icp4"/>
+        <LinkParameter id="sv1#page2#enu2#ln10#par62" name="Registration_Registration" source="sv1#page2#enu2#fld6" target="sv1#miu1.mov1#opm1#icu1#icp9"/>
+        <LinkParameter id="sv1#page2#enu2#ln10#par63" name="Username_Username" source="sv1#page2#enu2#fld1" target="sv1#miu1.mov1#opm1#icu1#icp5"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit gr:x="0" gr:y="10" id="sv1#page2#enu3" name="Login" linkOrder="sv1#page2#enu3#ln15">
+      <Field id="sv1#page2#enu3#fld7" name="Username" type="string" modifiable="true"/>
+      <Field id="sv1#page2#enu3#fld8" name="Password" type="password" modifiable="true" preloaded="false" contentType="text/plain"/>
+      <Link id="sv1#page2#enu3#ln15" name="Login" to="sv1#miu2" type="normal" validate="true">
+        <LinkParameter id="sv1#page2#enu3#ln15#par87" name="Password_Password" source="sv1#page2#enu3#fld8" target="sv1#miu2.mov1#opm2#icu2#icp11"/>
+        <LinkParameter id="sv1#page2#enu3#ln15#par88" name="Username_Username" source="sv1#page2#enu3#fld7" target="sv1#miu2.mov1#opm2#icu2#icp10"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="300" gr:y="0" id="sv1#page2#seu1" name="UserGroup" entity="Group" distinctAttributes="groupOID groupName">
+      <Link id="sv1#page2#seu1#ln4" name="GroupsSelection" to="sv1#page2#enu2" type="transport" validate="true">
+        <LinkParameter id="sv1#page2#seu1#ln4#par11" name="groupName_Group [label]" source="groupNameArray" target="sv1#page2#enu2#sfld1_label"/>
+        <LinkParameter id="sv1#page2#seu1#ln4#par12" name="oid_Group [output]" source="groupOIDArray" target="sv1#page2#enu2#sfld1_output"/>
+      </Link>
+    </SelectorUnit>
+    <TimeUnit gr:x="310" gr:y="90" id="sv1#page2#tmu5" name="Today">
+      <Link id="sv1#page2#tmu5#ln12" name="CreateUserTime" to="sv1#page2#enu2" type="transport" validate="true">
+        <LinkParameter id="sv1#page2#tmu5#ln12#par81" name="Current/Input Timestamp_LastActivity" source="currentTimestamp" target="sv1#page2#enu2#fld2_slot"/>
+        <LinkParameter id="sv1#page2#tmu5#ln12#par82" name="Current/Input Timestamp_Registration" source="currentTimestamp" target="sv1#page2#enu2#fld6_slot"/>
+      </Link>
+    </TimeUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#page2#enu3">
+          <layout:Field field="sv1#page2#enu3#fld7"/>
+          <layout:Field field="sv1#page2#enu3#fld8"/>
+          <layout:Link link="sv1#page2#enu3#ln15"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#page2#enu2">
+          <layout:Link link="sv1#page2#enu2#ln10"/>
+          <layout:Field field="sv1#page2#enu2#fld3"/>
+          <layout:Field field="sv1#page2#enu2#fld4"/>
+          <layout:Field field="sv1#page2#enu2#fld5"/>
+          <layout:Field field="sv1#page2#enu2#fld1"/>
+          <layout:Field field="sv1#page2#enu2#sfld1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

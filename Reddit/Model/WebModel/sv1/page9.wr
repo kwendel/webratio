@@ -1,0 +1,107 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="410" gr:y="440" id="sv1#page9" name="Post" landmark="false" protected="false" secure="false" ajaxEnabled="true">
+  <ContentUnits>
+    <DataUnit id="sv1#page9#dau3" name="PostDetails" gr:x="30" gr:y="0" entity="ent1" displayAll="true">
+      <Selector id="sv1#page9#dau3#su10" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#page9#dau3#su10#kcond7" name="SelectedPost" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#page9#dau3#ln34" name="GetPostID" to="sv1#page9#pwu9" type="transport" validate="true">
+        <LinkParameter id="sv1#page9#dau3#ln34#par109" name="oid_post_RoleCondition4 [oid_post]" source="data.ent1#att5" target="sv1#page9#pwu9#su11#rcond4.ent1#att5"/>
+      </Link>
+    </DataUnit>
+    <PowerIndexUnit gr:x="180" gr:y="5" id="sv1#page9#pwu9" name="Comments" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att17 ent3#att18 ent3#att19 ent3#att24 ent3#att25">
+      <Selector id="sv1#page9#pwu9#su11" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#page9#pwu9#su11#rcond4" name="CommentsOfPost" predicate="in" implied="false" role="rel5#role10"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page9#dau3">
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att7"/>
+          <layout:Attribute attribute="ent1#att23"/>
+          <layout:Attribute attribute="ent1#att22"/>
+          <layout:Attribute attribute="ent1#att14"/>
+          <layout:Attribute attribute="ent1#att16"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page9#pwu9">
+          <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att18"/>
+          <layout:Attribute attribute="ent3#att19"/>
+          <layout:Attribute attribute="ent3#att24"/>
+          <layout:Attribute attribute="ent3#att25"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

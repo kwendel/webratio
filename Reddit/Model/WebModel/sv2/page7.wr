@@ -1,0 +1,83 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="610" gr:y="100" id="sv2#page7" name="Create Post" landmark="true" protected="false">
+  <ContentUnits>
+    <SelectorUnit gr:x="0" gr:y="105" id="sv2#page7#seu13" name="CreateInChannel" entity="ent2">
+      <Link id="sv2#page7#seu13#ln29" name="Flow29" to="sv2#page7#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#page7#seu13#ln29#par103" name="title_PostToChannel [label]" source="ent2#att12Array" target="sv2#page7#enu5#sfld6_label"/>
+        <LinkParameter id="sv2#page7#seu13#ln29#par104" name="oid_channel_PostToChannel [output]" source="ent2#att10Array" target="sv2#page7#enu5#sfld6_output"/>
+      </Link>
+      <Selector id="sv2#page7#seu13#su38" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page7#seu13#su38#rcond20" name="RoleCondition20" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+    </SelectorUnit>
+    <EntryUnit gr:x="280" gr:y="95" id="sv2#page7#enu5" name="CreatePost" entity="ent1" linkOrder="sv2#page7#enu5#ln30" fieldOrder="sv2#page7#enu5#fld9 sv2#page7#enu5#fld11 sv2#page7#enu5#fld12 sv2#page7#enu5#fld10 sv2#page7#enu5#sfld6 sv2#page7#enu5#fld15">
+      <Field id="sv2#page7#enu5#fld9" name="title" type="string" modifiable="true" contentType="text/plain" attribute="ent1#att6"/>
+      <Field id="sv2#page7#enu5#fld10" name="publication" type="timestamp" modifiable="false" attribute="ent1#att7" preloaded="true"/>
+      <Field id="sv2#page7#enu5#fld11" name="link" type="url" modifiable="true" attribute="ent1#att8" contentType="url"/>
+      <Field id="sv2#page7#enu5#fld12" name="text" type="string" modifiable="true" contentType="text/html" attribute="ent1#att9"/>
+      <SelectionField id="sv2#page7#enu5#sfld6" name="PostToChannel" type="string" role="rel3#role5"/>
+      <Link id="sv2#page7#enu5#ln30" name="Create Post" to="sv2#cru3" type="normal" validate="true">
+        <LinkParameter id="sv2#page7#enu5#ln30#par97" name="0_downvotes" sourceValue="0" target="sv2#cru3.ent1#att23"/>
+        <LinkParameter id="sv2#page7#enu5#ln30#par99" name="publication_publication" source="sv2#page7#enu5#fld10" target="sv2#cru3.ent1#att7"/>
+        <LinkParameter id="sv2#page7#enu5#ln30#par100" name="text_text" source="sv2#page7#enu5#fld12" target="sv2#cru3.ent1#att9"/>
+        <LinkParameter id="sv2#page7#enu5#ln30#par101" name="title_title" source="sv2#page7#enu5#fld9" target="sv2#cru3.ent1#att6"/>
+        <LinkParameter id="sv2#page7#enu5#ln30#par102" name="0_upvotes" sourceValue="0" target="sv2#cru3.ent1#att22"/>
+        <LinkParameter id="sv2#page7#enu5#ln30#par121" name="PostToChannel_Channel.oid_channel(PostToChannel)" source="sv2#page7#enu5#sfld6" target="sv2#cru3.rel3#role5.ent2#att10"/>
+        <LinkParameter id="sv2#page7#enu5#ln30#par122" name="link_link" source="sv2#page7#enu5#fld11" target="sv2#cru3.ent1#att8"/>
+        <LinkParameter id="sv2#page7#enu5#ln30#par123" name="Owner_Registered User.oid_user(PostToRegistered User)" source="sv2#page7#enu5#fld15" target="sv2#cru3.rel4#role8.userOID"/>
+        <LinkParameter id="sv2#page7#enu5#ln30#par303" name="false_inappropriate" sourceValue="false" target="sv2#cru3.ent1#att14"/>
+      </Link>
+      <Field id="sv2#page7#enu5#fld15" name="Owner" type="string" modifiable="false" preloaded="true"/>
+    </EntryUnit>
+    <TimeUnit gr:x="80" gr:y="210" id="sv2#page7#tmu8" name="Now">
+      <Link id="sv2#page7#tmu8#ln31" name="GetCurrentTime" to="sv2#page7#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#page7#tmu8#ln31#par105" name="Current/Input Timestamp_publication" source="currentTimestamp" target="sv2#page7#enu5#fld10_slot"/>
+      </Link>
+    </TimeUnit>
+    <GetUnit id="sv2#page7#gtu8" name="GetUserID" gr:x="30" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv2#page7#gtu8#ln32" name="GetOwner" to="sv2#page7#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#page7#gtu8#ln32#par107" name="UserCtxParam.oid_user_Owner" source="sv2#page7#gtu8.UserCtxParam" target="sv2#page7#enu5#fld15_slot"/>
+      </Link>
+      <Link id="sv2#page7#gtu8#ln105" name="Flow105" to="sv2#page7#seu13" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page7#enu5">
+          <layout:Link link="sv2#page7#enu5#ln30"/>
+          <layout:Field field="sv2#page7#enu5#fld9"/>
+          <layout:Field field="sv2#page7#enu5#fld11"/>
+          <layout:Field field="sv2#page7#enu5#fld12"/>
+          <layout:Field field="sv2#page7#enu5#fld10"/>
+          <layout:Field field="sv2#page7#enu5#sfld6"/>
+          <layout:Field field="sv2#page7#enu5#fld15"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

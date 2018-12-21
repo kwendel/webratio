@@ -1,0 +1,78 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="365" gr:y="150" id="mov1#opm3" name="Post Actions">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm3#icu6" gr:x="-45" gr:y="160" linkOrder="mov1#opm3#icu6#ln109 mov1#opm3#icu6#ln110 mov1#opm3#icu6#ln114">
+      <InputCollectorParameter id="mov1#opm3#icu6#icp15" name="Action"/>
+      <InputCollectorParameter id="mov1#opm3#icu6#icp16" name="PostID"/>
+      <OKLink id="mov1#opm3#icu6#oln24" name="OKFlow24" to="mov1#opm3#seu15">
+        <LinkParameter id="mov1#opm3#icu6#oln24#par316" name="PostID_KeyCondition21 [oid_post]" source="mov1#opm3#icu6#icp16" target="mov1#opm3#seu15#su39#kcond21.ent1#att5"/>
+        <LinkParameter id="mov1#opm3#icu6#oln24#par341" name="Action_PASSING" source="mov1#opm3#icu6#icp15" passing="true"/>
+      </OKLink>
+      <Link id="mov1#opm3#icu6#ln109" name="GetPostID" to="mov1#opm3#mfu4" type="transport" validate="true" gr:bendpoints="151,115,-609,45;495,141,-265,71;607,129,-153,59">
+        <LinkParameter id="mov1#opm3#icu6#ln109#par339" name="PostID_KeyCondition22 [oid_post]" source="mov1#opm3#icu6#icp16" target="mov1#opm3#mfu4#su40#kcond22.ent1#att5"/>
+      </Link>
+      <Link id="mov1#opm3#icu6#ln110" name="GetPostID" to="mov1#opm3#mfu5" type="transport" validate="true" gr:bendpoints="210,-139,-550,-39;499,-153,-261,-53;609,-150,-151,-50">
+        <LinkParameter id="mov1#opm3#icu6#ln110#par340" name="PostID_KeyCondition22 [oid_post]" source="mov1#opm3#icu6#icp16" target="mov1#opm3#mfu5#su41#kcond23.ent1#att5"/>
+      </Link>
+      <Link id="mov1#opm3#icu6#ln114" name="Flow114" to="mov1#opm3#mfu9" type="transport" validate="true" gr:bendpoints="104,213,-672,9">
+        <LinkParameter id="mov1#opm3#icu6#ln114#par367" name="PostID_KeyCondition28 [oid_post]" source="mov1#opm3#icu6#icp16" target="mov1#opm3#mfu9#su46#kcond28.ent1#att5"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="230" gr:y="155" id="mov1#opm3#seu15" name="GetPostValue" entity="ent1">
+      <Selector id="mov1#opm3#seu15#su39" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm3#seu15#su39#kcond21" name="KeyCondition21" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm3#seu15#oln34" name="OKFlow34" to="mov1#opm3#switch1">
+        <LinkParameter id="mov1#opm3#seu15#oln34#par342" name="Action_PASSING_Switch" sourceLinkParameter="mov1#opm3#icu6#oln24#par341" target="mov1#opm3#switch1.switch"/>
+        <LinkParameter id="mov1#opm3#seu15#oln34#par343" name="downvotes_PASSING" source="ent1#att23Array" passing="true"/>
+        <LinkParameter id="mov1#opm3#seu15#oln34#par344" name="upvotes_PASSING" source="ent1#att22Array" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModifyUnit gr:x="775" gr:y="225" id="mov1#opm3#mfu4" name="Upvote Post" entity="ent1">
+      <Selector id="mov1#opm3#mfu4#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm3#mfu4#su40#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm3#mfu4#oln27" name="OKFlow27" to="mov1#opm3#okcu5" automaticCoupling="true"/>
+      <KOLink id="mov1#opm3#mfu4#kln10" name="KOFlow10" to="mov1#opm3#kocu4" automaticCoupling="true"/>
+    </ModifyUnit>
+    <MathUnit gr:x="545" gr:y="240" id="mov1#opm3#mathu1" name="Change Vote" resultType="integer" defaultExpression="CurrentVotes + 1">
+      <OKLink id="mov1#opm3#mathu1#oln26" name="OKFlow26" to="mov1#opm3#mfu4">
+        <LinkParameter id="mov1#opm3#mathu1#oln26#par324" name="Result_upvotes" source="result" target="mov1#opm3#mfu4.ent1#att22"/>
+      </OKLink>
+      <MathVariable id="mov1#opm3#mathu1#mathv1" name="CurrentVotes"/>
+    </MathUnit>
+    <OKCollectorUnit gr:x="940" gr:y="95" id="mov1#opm3#okcu5" name="Succes"/>
+    <KOCollectorUnit gr:x="940" gr:y="250" id="mov1#opm3#kocu4" name="Failure"/>
+    <SwitchUnit gr:x="385" gr:y="170" id="mov1#opm3#switch1" name="UpOrDown">
+      <OKLink id="mov1#opm3#switch1#oln30" name="OKFlow30" to="mov1#opm3#mathu1" code="up">
+        <LinkParameter id="mov1#opm3#switch1#oln30#par346" name="upvotes_PASSING_CurrentVotes" sourceLinkParameter="mov1#opm3#seu15#oln34#par344" target="mov1#opm3#mathu1#mathv1"/>
+      </OKLink>
+      <OKLink id="mov1#opm3#switch1#oln33" name="OKFlow30" to="mov1#opm3#mathu2" code="down">
+        <LinkParameter id="mov1#opm3#switch1#oln33#par345" name="downvotes_PASSING_CurrentVotes" sourceLinkParameter="mov1#opm3#seu15#oln34#par343" target="mov1#opm3#mathu2#mathv3"/>
+      </OKLink>
+      <Case value="up"/>
+      <Case value="down"/>
+      <Case value="inappropriate"/>
+      <OKLink id="mov1#opm3#switch1#oln45" name="OKFlow45" to="mov1#opm3#mfu9" gr:bendpoints="1,187,-409,-17" code="inappropriate">
+        <LinkParameter id="mov1#opm3#switch1#oln45#par368" name="true_inappropriate" sourceValue="true" target="mov1#opm3#mfu9.ent1#att14"/>
+      </OKLink>
+    </SwitchUnit>
+    <MathUnit id="mov1#opm3#mathu2" name="Change Vote" gr:x="540" gr:y="70" resultType="integer" defaultExpression="CurrentVotes + 1">
+      <OKLink id="mov1#opm3#mathu2#oln31" name="OKFlow26" to="mov1#opm3#mfu5">
+        <LinkParameter id="mov1#opm3#mathu2#oln31#par347" name="Result_downvotes" source="result" target="mov1#opm3#mfu5.ent1#att23"/>
+      </OKLink>
+      <MathVariable id="mov1#opm3#mathu2#mathv3" name="CurrentVotes"/>
+    </MathUnit>
+    <ModifyUnit id="mov1#opm3#mfu5" name="Downvote Post" gr:x="770" gr:y="55" entity="ent1">
+      <Selector id="mov1#opm3#mfu5#su41" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm3#mfu5#su41#kcond23" name="KeyCondition22" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm3#mfu5#oln32" name="OKFlow27" to="mov1#opm3#okcu5" automaticCoupling="true"/>
+      <KOLink id="mov1#opm3#mfu5#kln12" name="KOFlow10" to="mov1#opm3#kocu4" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ModifyUnit gr:x="775" gr:y="360" id="mov1#opm3#mfu9" name="Inappropriate Post" entity="ent1">
+      <Selector id="mov1#opm3#mfu9#su46" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm3#mfu9#su46#kcond28" name="KeyCondition28" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

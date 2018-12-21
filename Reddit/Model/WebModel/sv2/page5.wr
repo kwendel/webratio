@@ -1,0 +1,138 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="210" gr:y="80" id="sv2#page5" name="User" landmark="true" secure="false" protected="false" ajaxEnabled="true">
+  <ContentUnits>
+    <DataUnit gr:x="170" gr:y="95" id="sv2#page5#dau2" name="UserDetails" entity="User" displayAttributes="userName email User#att2 User#att3 User#att4 User#att1">
+      <Selector id="sv2#page5#dau2#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page5#dau2#su2#kcond2" predicate="in" implied="false" name="UserID"/>
+      </Selector>
+    </DataUnit>
+    <MultiMessageUnit gr:x="5" gr:y="0" id="sv2#page5#mssu2" name="Welcome">
+      <Message xml:space="preserve">Welcom user!!</Message>
+    </MultiMessageUnit>
+    <GetUnit gr:x="0" gr:y="100" id="sv2#page5#gtu2" name="GetUserID" contextParameters="UserCtxParam">
+      <Link id="sv2#page5#gtu2#ln11" name="GetUserID" to="sv2#page5#dau2" type="transport" validate="true">
+        <LinkParameter id="sv2#page5#gtu2#ln11#par80" name="UserCtxParam.oid_user_KeyCondition2 [oid_user]" source="sv2#page5#gtu2.UserCtxParam" target="sv2#page5#dau2#su2#kcond2.userOID"/>
+      </Link>
+      <Link id="sv2#page5#gtu2#ln27" name="GetUserID" to="sv2#page5#seu11" type="transport" validate="true">
+        <LinkParameter id="sv2#page5#gtu2#ln27#par96" name="UserCtxParam.oid_user_Subscribed Channels of User [oid_user]" source="sv2#page5#gtu2.UserCtxParam" target="sv2#page5#seu11#su5#rcond1.userOID"/>
+      </Link>
+    </GetUnit>
+    <PowerIndexUnit gr:x="5" gr:y="305" id="sv2#page5#pwu7" name="SubscribedPosts" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att6 ent1#att8 ent1#att9 ent1#att16" linkOrder="sv2#page5#pwu7#ln87 sv2#page5#pwu7#ln106 sv2#page5#pwu7#ln107 sv2#page5#pwu7#ln115">
+      <Selector id="sv2#page5#pwu7#su6" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page5#pwu7#su6#rcond2" name="Posts of Subscribed Channels" predicate="in" implied="false" role="rel3#role6"/>
+      </Selector>
+      <Link id="sv2#page5#pwu7#ln87" name="View Post" to="sv2#page24#dau9" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true"/>
+      <Link id="sv2#page5#pwu7#ln106" name="Upvote" to="sv2#miu7" type="normal" validate="true" gr:bendpoints="197,-32,-193,-52">
+        <LinkParameter id="sv2#page5#pwu7#ln106#par325" name="oid_post_PostID" source="data[].ent1#att5" target="sv2#miu7.mov1#opm3#icu6#icp16"/>
+        <LinkParameter id="sv2#page5#pwu7#ln106#par326" name="1_VoteValue" sourceValue="up" target="sv2#miu7.mov1#opm3#icu6#icp15"/>
+      </Link>
+      <Link id="sv2#page5#pwu7#ln107" name="Downvote" to="sv2#miu7" type="normal" validate="true">
+        <LinkParameter id="sv2#page5#pwu7#ln107#par327" name="oid_post_PostID" source="data[].ent1#att5" target="sv2#miu7.mov1#opm3#icu6#icp16"/>
+        <LinkParameter id="sv2#page5#pwu7#ln107#par328" name="-1_VoteValue" sourceValue="down" target="sv2#miu7.mov1#opm3#icu6#icp15"/>
+      </Link>
+      <Link id="sv2#page5#pwu7#ln115" name="Inappropriate" to="sv2#miu7" type="normal" validate="true" gr:bendpoints="177,43,-217,23">
+        <LinkParameter id="sv2#page5#pwu7#ln115#par369" name="inappropriate_Action" sourceValue="inappropriate" target="sv2#miu7.mov1#opm3#icu6#icp15"/>
+        <LinkParameter id="sv2#page5#pwu7#ln115#par370" name="oid_post_PostID" source="data[].ent1#att5" target="sv2#miu7.mov1#opm3#icu6#icp16"/>
+      </Link>
+    </PowerIndexUnit>
+    <SelectorUnit gr:x="5" gr:y="200" id="sv2#page5#seu11" name="SubscribedChannels" entity="ent2">
+      <Selector id="sv2#page5#seu11#su5" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page5#seu11#su5#rcond1" name="Subscribed Channels of User" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+      <Link id="sv2#page5#seu11#ln24" name="Flow24" to="sv2#page5#pwu7" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page5#mssu2"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page5#dau2">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att2"/>
+          <layout:Attribute attribute="User#att3"/>
+          <layout:Attribute attribute="User#att4"/>
+          <layout:Attribute attribute="User#att1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page5#pwu7">
+          <layout:Link link="sv2#page5#pwu7#ln87"/>
+          <layout:Link link="sv2#page5#pwu7#ln106"/>
+          <layout:Link link="sv2#page5#pwu7#ln107"/>
+          <layout:Link link="sv2#page5#pwu7#ln115"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="ent1#att16"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

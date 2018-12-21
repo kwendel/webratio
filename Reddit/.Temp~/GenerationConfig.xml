@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+  <Properties>
+    <Property name="ajaxActivated">true</Property>
+    <Property name="applicationServer">Tomcat</Property>
+    <Property name="cloudDeploy">false</Property>
+    <Property name="commonsLibDir">/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.commons.libs_7.2.16.201709280414/lib</Property>
+    <Property name="dbConfigPath">/tmp/WRDBConfig8025474345361931770.xml</Property>
+    <Property name="defaultEncoding"></Property>
+    <Property name="deployCorePluginDir">/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/configuration/org.eclipse.osgi/bundles/49/1/.cp</Property>
+    <Property name="derbySystemHome">/home/kasper/Documents/Study/WebRatio_workspace/.metadata/.plugins/com.webratio.commons.db/derby</Property>
+    <Property name="enterpriseProjectDir"></Property>
+    <Property name="eventSocketPort">43841</Property>
+    <Property name="excludedProjects" type="list"></Property>
+    <Property name="generationTime">201811211906</Property>
+    <Property name="helpersPluginDir">/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.generator.helpers_7.2.16.201709280414</Property>
+    <Property name="i18nBundleKeysFile" type="file"></Property>
+    <Property name="i18nExtraBundleFile" type="file"></Property>
+    <Property name="localDeploy">true</Property>
+    <Property name="lockDir">/home/kasper/Documents/Study/WebRatio_workspace/Reddit/.Temp~</Property>
+    <Property name="normalizeDescriptors">false</Property>
+    <Property name="outputPath">/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/Tomcat/webapps/Reddit</Property>
+    <Property name="phases">All</Property>
+    <Property name="projectDir">/home/kasper/Documents/Study/WebRatio_workspace/Reddit</Property>
+    <Property name="projectName">Reddit</Property>
+    <Property name="projectPath">/tmp/Project6032430566477134715.wr</Property>
+    <Property name="projectType">WEBPROJECT</Property>
+    <Property name="rootModuleName"></Property>
+    <Property name="uiPluginDir">/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.ide.ui_7.2.16.201709280414</Property>
+    <Property name="webappPluginDir">/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.generator.webapp_7.2.16.201709280414</Property>
+    <Property name="wrBuildId">201709280414</Property>
+    <Property name="wrGenerateOldValidationRules">false</Property>
+    <Property name="wrModelStatistics">pages=11|units=79</Property>
+    <Property name="wrVersion">7.2.16</Property>
+  </Properties>
+  <Plugins>
+    <Plugin id="com.webratio.commons.libs" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.commons.libs_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.commons.transform" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.commons.transform_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.debug" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.debug_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.json" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.json_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.lib.apache.commons.codec" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.lib.apache.commons.codec_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.lib.apache.commons.collections" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.lib.apache.commons.collections_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.lib.apache.commons.httpclient" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.lib.apache.commons.httpclient_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.lib.apache.commons.lang" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.lib.apache.commons.lang_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.lib.apache.commons.logging" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.lib.apache.commons.logging_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.lib.dom4j" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.lib.dom4j_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.lib.javassist" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.lib.javassist_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.rtx.extras" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.rtx.extras_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.rtx" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.rtx_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.struts13" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.struts13_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.units.content" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.units.content_7.2.16.201709280414" type="components"/>
+    <Plugin id="com.webratio.units.controlflow" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.units.controlflow_7.2.16.201709280414" type="components"/>
+    <Plugin id="com.webratio.units.module" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.units.module_7.2.16.201709280414" type="components"/>
+    <Plugin id="com.webratio.units.operation" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.units.operation_7.2.16.201709280414" type="components"/>
+    <Plugin id="com.webratio.units.session" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.units.session_7.2.16.201709280414" type="components"/>
+    <Plugin id="com.webratio.units.utility" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.units.utility_7.2.16.201709280414" type="components"/>
+    <Plugin id="com.webratio.units.validation" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.units.validation_7.2.16.201709280414" type="components"/>
+    <Plugin id="com.webratio.units.ws" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.units.ws_7.2.16.201709280414" type="components"/>
+    <Plugin id="com.webratio.ws" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.ws_7.2.16.201709280414"/>
+    <Plugin id="com.webratio.xsd" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/com.webratio.xsd_7.2.16.201709280414"/>
+  </Plugins>
+  <Styles>
+    <Style name="Excel" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/Excel_7.2.16.201709280414"/>
+    <Style name="Multiflex" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/Multiflex_7.2.16.201709280414"/>
+    <Style name="Reports" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/Reports_7.2.16.201709280414"/>
+    <Style name="WebRatio" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/WebRatio_7.2.16.201709280414"/>
+    <Style name="WRDefault" path="/home/kasper/Documents/Study/Master/Web Science &amp; Engineering/WebRatio/plugins/WRDefault_7.2.16.201709280414"/>
+  </Styles>
+  <FileEncodings/>
+</Configuration>

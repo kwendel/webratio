@@ -1,0 +1,5 @@
+#Wed Oct 10 12:50:04 GMT+01:00 2018
+__DEFAULT__=false
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.help.ui.localSearch.master=true
+expression=WebRatio Add-ons

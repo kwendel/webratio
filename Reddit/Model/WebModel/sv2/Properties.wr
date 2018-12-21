@@ -1,0 +1,21 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Users" protected="true" secure="false" homePage="sv2#page5" landmarks="sv2#page5 sv2#page7 sv2#lou1">
+  <OperationUnits>
+    <LogoutUnit gr:x="70" gr:y="240" id="sv2#lou1" name="Logout" siteView="sv1" invalidateSession="true" landmark="true"/>
+    <CreateUnit gr:x="1090" gr:y="290" id="sv2#cru3" name="CreatePost" entity="ent1">
+      <KOLink id="sv2#cru3#kln9" name="KOFlow9" to="sv2#page8#mssu3" automaticCoupling="true"/>
+      <OKLink id="sv2#cru3#oln16" name="OKFlow16" to="sv2#page7" automaticCoupling="true" gr:bendpoints="-136,-34,-66,211"/>
+    </CreateUnit>
+    <CreateUnit id="sv2#cru7" name="CreateComment" gr:x="615" gr:y="715" entity="ent3">
+      <OKLink id="sv2#cru7#oln15" name="OKFlow17" to="sv2#page24" automaticCoupling="true"/>
+      <KOLink id="sv2#cru7#kln7" name="KOFlow7" to="sv2#page8#mssu3" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModuleInstanceUnit gr:x="600" gr:y="450" id="sv2#miu7" action="true" moduleId="mov1#opm3" name="PostActions">
+      <OKLink id="sv2#miu7#oln28" name="OKFlow28" to="sv2#page5#pwu7" automaticCoupling="true" gr:bendpoints="-166,-117,218,-21"/>
+      <KOLink id="sv2#miu7#kln11" name="KOFlow11" to="sv2#page8#mssu3" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv2#miu8" name="PostActions" gr:x="610" gr:y="555" action="true" moduleId="mov1#opm3">
+      <OKLink id="sv2#miu8#oln46" name="OKFlow28" to="sv2#page24#dau9" automaticCoupling="true" gr:bendpoints="-166,-117,218,-21"/>
+      <KOLink id="sv2#miu8#kln16" name="KOFlow11" to="sv2#page8#mssu3" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</SiteView>

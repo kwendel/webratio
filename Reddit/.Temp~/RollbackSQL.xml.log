@@ -1,0 +1,36 @@
+[10 Oct 2018 15:21:06] DEBUG Executing SQL script
+[10 Oct 2018 15:21:06] INFO ================================================================================
+[10 Oct 2018 15:21:06] INFO onError= 'stop'
+[10 Oct 2018 15:21:06] INFO autoCommit= 'false'
+[10 Oct 2018 15:21:06] INFO username= 'postgres'
+[10 Oct 2018 15:21:06] INFO outputPath= '/home/kasper/Documents/Study/WebRatio_workspace/Reddit/.Temp~/RollbackSQL.xml'
+[10 Oct 2018 15:21:06] INFO outputLogPath= '/home/kasper/Documents/Study/WebRatio_workspace/Reddit/.Temp~/RollbackSQL.xml.log'
+[10 Oct 2018 15:21:06] INFO encoding= ''
+[10 Oct 2018 15:21:06] INFO driverClass= 'org.postgresql.Driver'
+[10 Oct 2018 15:21:06] INFO sqlScript= '/home/kasper/Documents/Study/WebRatio_workspace/Reddit/.Temp~/RollbackSQL.sql'
+[10 Oct 2018 15:21:06] INFO eventSocketPort= '45529'
+[10 Oct 2018 15:21:06] INFO statementSeparator= ';'
+[10 Oct 2018 15:21:06] INFO derby.system.home= '/home/kasper/Documents/Study/WebRatio_workspace/.metadata/.plugins/com.webratio.commons.db/derby'
+[10 Oct 2018 15:21:06] INFO password= 'password'
+[10 Oct 2018 15:21:06] INFO url= 'jdbc:postgresql://localhost:5432/reddit_clone'
+[10 Oct 2018 15:21:06] INFO ================================================================================
+[10 Oct 2018 15:21:06] INFO Connecting to the Database...
+[10 Oct 2018 15:21:06] INFO Database connection estabilished
+[10 Oct 2018 15:21:06] INFO transaction isolation: 2
+[10 Oct 2018 15:21:06] DEBUG ================================================================================
+[10 Oct 2018 15:21:06] DEBUG Executing SQL script file: /home/kasper/Documents/Study/WebRatio_workspace/Reddit/.Temp~/RollbackSQL.sql
+[10 Oct 2018 15:21:06] DEBUG Executing statement:  alter table "public"."comment"   drop column  "inappropriate"
+[10 Oct 2018 15:21:06] ERROR Could not execute statement:  alter table "public"."comment"   drop column  "inappropriate"
+org.postgresql.util.PSQLException: ERROR: column "inappropriate" of relation "comment" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2102)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1835)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:500)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:374)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:366)
+	at com.webratio.commons.db.utils.DBUtils.execute(DBUtils.java:523)
+	at com.webratio.commons.db.utils.DBUtils.executeScriptFiles(DBUtils.java:442)
+	at com.webratio.commons.db.utils.DBUtils.main(DBUtils.java:257)
+[10 Oct 2018 15:21:06] ERROR SQL SCRIPT EXECUTION FAILED
+[10 Oct 2018 15:21:06] INFO Database connection closed
+[10 Oct 2018 15:21:06] DEBUG Total time: 172 milliseconds

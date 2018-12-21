@@ -1,0 +1,59 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="205" gr:y="170" id="sv1#page1" name="Home Page">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#page1#inu1" name="Products List" entity="ent1" displayAttributes="ent1#att2 ent1#att4" linkOrder="sv1#page1#inu1#ln1">
+      <Link id="sv1#page1#inu1#ln1" name="See Details" to="sv1#page2#dau1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#inu1#ln1#par1" name="oid_KeyCondition1 [oid]" source="data[].ent1#att1" target="sv1#page2#dau1#su1#kcond1.ent1#att1"/>
+      </Link>
+    </IndexUnit>
+    <EntryUnit gr:x="0" gr:y="85" id="sv1#page1#enu2" name="Login" linkOrder="sv1#page1#enu2#ln6">
+      <Field id="sv1#page1#enu2#fld4" name="Username" type="string" modifiable="true"/>
+      <Field id="sv1#page1#enu2#fld5" name="Password" type="password" modifiable="true"/>
+      <Link id="sv1#page1#enu2#ln6" name="Login" to="sv1#lgu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu2#ln6#par9" name="Username_Username" source="sv1#page1#enu2#fld4" target="sv1#lgu1.username"/>
+        <LinkParameter id="sv1#page1#enu2#ln6#par10" name="Password_Password" source="sv1#page1#enu2#fld5" target="sv1#lgu1.password"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#inu1">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Link link="sv1#page1#inu1#ln1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu2">
+          <layout:Field field="sv1#page1#enu2#fld4"/>
+          <layout:Field field="sv1#page1#enu2#fld5"/>
+          <layout:Link link="sv1#page1#enu2#ln6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,67 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="10" gr:y="125" id="sv3#page26" name="Invite" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="295" gr:y="5" id="sv3#page26#enu20" name="Invite to private channel" linkOrder="sv3#page26#enu20#ln96">
+      <SelectionField id="sv3#page26#enu20#sfld32" name="Private Channel" type="string"/>
+      <SelectionField id="sv3#page26#enu20#sfld33" name="User" type="string"/>
+      <Link id="sv3#page26#enu20#ln96" name="Invite" to="sv3#cnu2" type="normal" validate="true">
+        <LinkParameter id="sv3#page26#enu20#ln96#par301" name="Private Channel_KeyCondition15 [oid_channel] [Channel] [Source]" source="sv3#page26#enu20#sfld32" target="sv3#cnu2#su28#kcond15.ent2#att10"/>
+        <LinkParameter id="sv3#page26#enu20#ln96#par302" name="User_KeyCondition16 [oid_user] [Registered User] [Target]" source="sv3#page26#enu20#sfld33" target="sv3#cnu2#su29#kcond16.userOID"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="125" gr:y="75" id="sv3#page26#seu4" name="Private Channels" entity="ent2">
+      <Selector id="sv3#page26#seu4#su30" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#page26#seu4#su30#acond3" name="AttCondition3" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att11" value="true"/>
+        <RelationshipRoleCondition id="sv3#page26#seu4#su30#rcond19" name="RoleCondition19" predicate="in" implied="false" role="rel1#role2"/>
+      </Selector>
+      <Link id="sv3#page26#seu4#ln94" name="Flow94" to="sv3#page26#enu20" type="transport" validate="true">
+        <LinkParameter id="sv3#page26#seu4#ln94#par297" name="title_Private Channel [label]" source="ent2#att12Array" target="sv3#page26#enu20#sfld32_label"/>
+        <LinkParameter id="sv3#page26#seu4#ln94#par298" name="oid_channel_Private Channel [output]" source="ent2#att10Array" target="sv3#page26#enu20#sfld32_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv3#page26#seu6" gr:x="310" gr:y="110" name="Users" entity="User">
+      <Link id="sv3#page26#seu6#ln95" name="Flow95" to="sv3#page26#enu20" type="transport" validate="true">
+        <LinkParameter id="sv3#page26#seu6#ln95#par299" name="userName_User [label]" source="userNameArray" target="sv3#page26#enu20#sfld33_label"/>
+        <LinkParameter id="sv3#page26#seu6#ln95#par300" name="oid_user_User [output]" source="userOIDArray" target="sv3#page26#enu20#sfld33_output"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit id="sv3#page26#gtu23" name="GetUserID" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv3#page26#gtu23#ln104" name="Flow104" to="sv3#page26#seu4" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page26#enu20">
+          <layout:Field field="sv3#page26#enu20#sfld32"/>
+          <layout:Field field="sv3#page26#enu20#sfld33"/>
+          <layout:Link link="sv3#page26#enu20#ln96"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

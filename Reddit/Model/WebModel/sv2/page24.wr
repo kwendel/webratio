@@ -1,0 +1,177 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page24" name="Post" landmark="false" protected="false" secure="false" ajaxEnabled="true" gr:x="210" gr:y="585">
+  <ContentUnits>
+    <DataUnit id="sv2#page24#dau9" name="PostDetails" gr:x="30" gr:y="0" entity="ent1" linkOrder="sv2#page24#dau9#ln123 sv2#page24#dau9#ln121 sv2#page24#dau9#ln119" displayAttributes="ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att16">
+      <Selector id="sv2#page24#dau9#su20" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page24#dau9#su20#kcond9" name="SelectedPost" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page24#dau9#ln82" name="GetPostID" to="sv2#page24#pwu14" type="transport" validate="true">
+        <LinkParameter id="sv2#page24#dau9#ln82#par267" name="oid_post_RoleCondition4 [oid_post]" source="data.ent1#att5" target="sv2#page24#pwu14#su21#rcond13.ent1#att5"/>
+      </Link>
+      <Link id="sv2#page24#dau9#ln83" name="GetPostID" to="sv2#page24#enu18" type="transport" validate="true">
+        <LinkParameter id="sv2#page24#dau9#ln83#par268" name="oid_post_CommentToPost - Preselection" source="data.ent1#att5" target="sv2#page24#enu18#sfld28_presel"/>
+        <LinkParameter id="sv2#page24#dau9#ln83#par269" name="title_CommentToPost [label]" source="data.ent1#att6" target="sv2#page24#enu18#sfld28_label"/>
+        <LinkParameter id="sv2#page24#dau9#ln83#par270" name="oid_post_CommentToPost [output]" source="data.ent1#att5" target="sv2#page24#enu18#sfld28_output"/>
+      </Link>
+      <Link id="sv2#page24#dau9#ln119" name="Upvote" to="sv2#miu8" type="normal" validate="true" gr:bendpoints="183,-71,-197,109">
+        <LinkParameter id="sv2#page24#dau9#ln119#par377" name="up_Action" target="sv2#miu8.mov1#opm3#icu6#icp15" sourceValue="up"/>
+        <LinkParameter id="sv2#page24#dau9#ln119#par378" name="oid_post_PostID" source="data.ent1#att5" target="sv2#miu8.mov1#opm3#icu6#icp16"/>
+      </Link>
+      <Link id="sv2#page24#dau9#ln121" name="Inappropriate" to="sv2#miu8" type="normal" validate="true" gr:bendpoints="171,-99,-209,81">
+        <LinkParameter id="sv2#page24#dau9#ln121#par381" name="inappropriate_Action" target="sv2#miu8.mov1#opm3#icu6#icp15" sourceValue="inappropriate"/>
+        <LinkParameter id="sv2#page24#dau9#ln121#par382" name="oid_post_PostID" source="data.ent1#att5" target="sv2#miu8.mov1#opm3#icu6#icp16"/>
+      </Link>
+      <Link id="sv2#page24#dau9#ln123" name="Downvote" to="sv2#miu8" type="normal" validate="true">
+        <LinkParameter id="sv2#page24#dau9#ln123#par385" name="down_Action" target="sv2#miu8.mov1#opm3#icu6#icp15" sourceValue="down"/>
+        <LinkParameter id="sv2#page24#dau9#ln123#par386" name="oid_post_PostID" source="data.ent1#att5" target="sv2#miu8.mov1#opm3#icu6#icp16"/>
+      </Link>
+    </DataUnit>
+    <PowerIndexUnit id="sv2#page24#pwu14" name="Comments" gr:x="175" gr:y="45" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att17 ent3#att18 ent3#att19 ent3#att24 ent3#att25">
+      <Selector id="sv2#page24#pwu14#su21" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page24#pwu14#su21#rcond13" name="CommentsOfPost" predicate="in" implied="false" role="rel5#role10"/>
+      </Selector>
+    </PowerIndexUnit>
+    <TimeUnit id="sv2#page24#tmu18" name="GetCurrentTime" gr:x="0" gr:y="270">
+      <Link id="sv2#page24#tmu18#ln84" name="GetCurrentTime" to="sv2#page24#enu18" type="transport" validate="true">
+        <LinkParameter id="sv2#page24#tmu18#ln84#par271" name="Current/Input Timestamp_publication" source="currentTimestamp" target="sv2#page24#enu18#fld49_slot"/>
+      </Link>
+    </TimeUnit>
+    <GetUnit id="sv2#page24#gtu18" name="GetUser" gr:x="5" gr:y="175" contextParameters="UserCtxParam">
+      <Link id="sv2#page24#gtu18#ln85" name="Flow35" to="sv2#page24#enu18" type="transport" validate="true">
+        <LinkParameter id="sv2#page24#gtu18#ln85#par272" name="UserCtxParam.oid_user_CommentToRegistered User [label]" source="sv2#page24#gtu18.UserCtxParam" target="sv2#page24#enu18#sfld29_label"/>
+        <LinkParameter id="sv2#page24#gtu18#ln85#par273" name="UserCtxParam.oid_user_CommentToRegistered User [output]" source="sv2#page24#gtu18.UserCtxParam" target="sv2#page24#enu18#sfld29_output"/>
+        <LinkParameter id="sv2#page24#gtu18#ln85#par274" name="UserCtxParam.oid_user_CommentToRegistered User - Preselection" source="sv2#page24#gtu18.UserCtxParam" target="sv2#page24#enu18#sfld29_presel"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit id="sv2#page24#enu18" name="CreateComment" linkOrder="sv2#page24#enu18#ln86" gr:showAllParts="false" gr:x="155" gr:y="170" entity="ent3" ajaxEnableExpandedLinks="true">
+      <Field id="sv2#page24#enu18#fld48" name="title" type="string" modifiable="true" contentType="text/plain" attribute="ent3#att17"/>
+      <Field id="sv2#page24#enu18#fld49" name="publication" type="timestamp" modifiable="false" attribute="ent3#att18" preloaded="true"/>
+      <Field id="sv2#page24#enu18#fld50" name="content" type="string" modifiable="true" contentType="text/html" attribute="ent3#att19"/>
+      <SelectionField id="sv2#page24#enu18#sfld28" name="CommentToPost" type="string" role="rel5#role9"/>
+      <SelectionField id="sv2#page24#enu18#sfld29" name="CommentToRegistered User" type="string" role="rel6#role11"/>
+      <Link id="sv2#page24#enu18#ln86" name="Create" to="sv2#cru7" type="normal" validate="true">
+        <LinkParameter id="sv2#page24#enu18#ln86#par275" name="content_content" source="sv2#page24#enu18#fld50" target="sv2#cru7.ent3#att19"/>
+        <LinkParameter id="sv2#page24#enu18#ln86#par276" name="0_downvotes" target="sv2#cru7.ent3#att25" sourceValue="0"/>
+        <LinkParameter id="sv2#page24#enu18#ln86#par277" name="title_title" source="sv2#page24#enu18#fld48" target="sv2#cru7.ent3#att17"/>
+        <LinkParameter id="sv2#page24#enu18#ln86#par278" name="0_upvotes" target="sv2#cru7.ent3#att24" sourceValue="0"/>
+        <LinkParameter id="sv2#page24#enu18#ln86#par279" name="CommentToPost_Post.oid_post(CommentToPost)" source="sv2#page24#enu18#sfld28" target="sv2#cru7.rel5#role9.ent1#att5"/>
+        <LinkParameter id="sv2#page24#enu18#ln86#par280" name="publication_publication" source="sv2#page24#enu18#fld49" target="sv2#cru7.ent3#att18"/>
+        <LinkParameter id="sv2#page24#enu18#ln86#par281" name="CommentToRegistered User_Registered User.oid_user(CommentToRegistered User)" source="sv2#page24#enu18#sfld29" target="sv2#cru7.rel6#role11.userOID"/>
+        <LinkParameter id="sv2#page24#enu18#ln86#par304" name="false_inappropriate" sourceValue="false" target="sv2#cru7.ent3#att15"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page24#dau9">
+          <layout:Link link="sv2#page24#dau9#ln123"/>
+          <layout:Link link="sv2#page24#dau9#ln121"/>
+          <layout:Link link="sv2#page24#dau9#ln119"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att7"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="ent1#att16"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page24#pwu14">
+          <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att18"/>
+          <layout:Attribute attribute="ent3#att19"/>
+          <layout:Attribute attribute="ent3#att24"/>
+          <layout:Attribute attribute="ent3#att25"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page24#enu18">
+          <layout:Field field="sv2#page24#enu18#fld48"/>
+          <layout:Field field="sv2#page24#enu18#fld49"/>
+          <layout:Field field="sv2#page24#enu18#fld50"/>
+          <layout:Field field="sv2#page24#enu18#sfld28"/>
+          <layout:Field field="sv2#page24#enu18#sfld29"/>
+          <layout:Link link="sv2#page24#enu18#ln86"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

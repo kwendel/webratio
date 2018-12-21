@@ -1,0 +1,44 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="100" gr:y="185" id="sv2#page5" name="Home Private">
+  <ContentUnits>
+    <IndexUnit gr:x="150" gr:y="0" id="sv2#page5#inu2" name="Shopping Cart" entity="ent3">
+      <Selector id="sv2#page5#inu2#su3" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page5#inu2#su3#rcond1" name="RoleCondition1" predicate="in" implied="false" role="rel3#role6"/>
+      </Selector>
+    </IndexUnit>
+    <GetUnit gr:x="0" gr:y="15" id="sv2#page5#gtu1" name="Get UserID" contextParameters="UserCtxParam">
+      <Link id="sv2#page5#gtu1#ln7" name="Flow7" to="sv2#page5#inu2" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page5#inu2"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

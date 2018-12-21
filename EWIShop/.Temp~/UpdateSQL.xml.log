@@ -1,0 +1,48 @@
+[09 Oct 2018 17:22:30] DEBUG Executing SQL script
+[09 Oct 2018 17:22:30] INFO ================================================================================
+[09 Oct 2018 17:22:30] INFO onError= 'stop'
+[09 Oct 2018 17:22:30] INFO autoCommit= 'false'
+[09 Oct 2018 17:22:30] INFO username= 'postgres'
+[09 Oct 2018 17:22:30] INFO outputPath= '/home/kasper/Documents/Study/WebRatio_workspace/EWIShop/.Temp~/UpdateSQL.xml'
+[09 Oct 2018 17:22:30] INFO outputLogPath= '/home/kasper/Documents/Study/WebRatio_workspace/EWIShop/.Temp~/UpdateSQL.xml.log'
+[09 Oct 2018 17:22:30] INFO encoding= ''
+[09 Oct 2018 17:22:30] INFO driverClass= 'org.postgresql.Driver'
+[09 Oct 2018 17:22:30] INFO sqlScript= '/home/kasper/Documents/Study/WebRatio_workspace/EWIShop/.Temp~/UpdateSQL.sql'
+[09 Oct 2018 17:22:30] INFO eventSocketPort= '45799'
+[09 Oct 2018 17:22:30] INFO statementSeparator= ';'
+[09 Oct 2018 17:22:30] INFO derby.system.home= '/home/kasper/Documents/Study/WebRatio_workspace/.metadata/.plugins/com.webratio.commons.db/derby'
+[09 Oct 2018 17:22:30] INFO password= 'password'
+[09 Oct 2018 17:22:30] INFO url= 'jdbc:postgresql://localhost:5432/ewishop'
+[09 Oct 2018 17:22:30] INFO ================================================================================
+[09 Oct 2018 17:22:30] INFO Connecting to the Database...
+[09 Oct 2018 17:22:30] INFO Database connection estabilished
+[09 Oct 2018 17:22:30] INFO transaction isolation: 2
+[09 Oct 2018 17:22:30] DEBUG ================================================================================
+[09 Oct 2018 17:22:30] DEBUG Executing SQL script file: /home/kasper/Documents/Study/WebRatio_workspace/EWIShop/.Temp~/UpdateSQL.sql
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  create table "public"."group" ( "oid"  int4  not null, "groupname"  varchar(255), primary key ("oid") )
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    create table "public"."module" ( "oid"  int4  not null, "moduleid"  varchar(255), "modulename"  varchar(255), primary key ("oid") )
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    create table "public"."user" ( "oid"  int4  not null, "username"  varchar(255), "password"  varchar(255), "email"  varchar(255), primary key ("oid") )
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    create table "public"."product" ( "oid"  int4  not null, "name"  varchar(255), "dateproduction"  date, "cost"  float8, primary key ("oid") )
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    create table "public"."category" ( "oid"  int4  not null, "name"  varchar(255), primary key ("oid") )
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    create table "public"."shopping_cart" ( "oid"  int4  not null, primary key ("oid") )
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    alter table "public"."group"  add column  "module_oid"  int4
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."group"   add constraint fk_group_module foreign key ("module_oid") references "public"."module" ("oid")
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    create table "public"."group_module" ( "group_oid"  int4 not null, "module_oid"  int4 not null, primary key ("group_oid", "module_oid") )
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."group_module"   add constraint fk_group_module_group foreign key ("group_oid") references "public"."group" ("oid")
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."group_module"   add constraint fk_group_module_module foreign key ("module_oid") references "public"."module" ("oid")
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    alter table "public"."user"  add column  "group_oid"  int4
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."user"   add constraint fk_user_group foreign key ("group_oid") references "public"."group" ("oid")
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    create table "public"."user_group" ( "user_oid"  int4 not null, "group_oid"  int4 not null, primary key ("user_oid", "group_oid") )
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."user_group"   add constraint fk_user_group_user foreign key ("user_oid") references "public"."user" ("oid")
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."user_group"   add constraint fk_user_group_group foreign key ("group_oid") references "public"."group" ("oid")
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    alter table "public"."product"  add column  "category_oid"  int4
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."product"   add constraint fk_product_category foreign key ("category_oid") references "public"."category" ("oid")
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    create table "public"."shopping_cart_product" ( "shopping_cart_oid"  int4 not null, "product_oid"  int4 not null, primary key ("shopping_cart_oid", "product_oid") )
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."shopping_cart_product"   add constraint fk_shopping_cart_product_shopp foreign key ("shopping_cart_oid") references "public"."shopping_cart" ("oid")
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."shopping_cart_product"   add constraint fk_shopping_cart_product_produ foreign key ("product_oid") references "public"."product" ("oid")
+[09 Oct 2018 17:22:30] DEBUG Executing statement:    alter table "public"."shopping_cart"  add column  "user_oid"  int4
+[09 Oct 2018 17:22:30] DEBUG Executing statement:  alter table "public"."shopping_cart"   add constraint fk_shopping_cart_user foreign key ("user_oid") references "public"."user" ("oid")
+[09 Oct 2018 17:22:30] DEBUG ================================================================================
+[09 Oct 2018 17:22:30] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[09 Oct 2018 17:22:30] INFO Database connection closed
+[09 Oct 2018 17:22:30] DEBUG Total time: 299 milliseconds

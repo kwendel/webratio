@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Warnings> 
+  <Warning error="false" xpath="id('sv1#page1#inu1')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Products List"> 
+    <Message>Sorting attribute are unspecified for the component 'Products List'</Message> 
+  </Warning> 
+</Warnings>

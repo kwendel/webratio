@@ -1,0 +1,18 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="80" gr:y="150" id="mov1#opm2" name="LoginUser">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm2#icu2" gr:x="35" gr:y="130">
+      <InputCollectorParameter id="mov1#opm2#icu2#icp10" name="Username"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp11" name="Password"/>
+      <OKLink id="mov1#opm2#icu2#oln6" name="OKFlow6" to="mov1#opm2#lgu2">
+        <LinkParameter id="mov1#opm2#icu2#oln6#par83" name="Username_Username" source="mov1#opm2#icu2#icp10" target="mov1#opm2#lgu2.username"/>
+        <LinkParameter id="mov1#opm2#icu2#oln6#par84" name="Password_Password" source="mov1#opm2#icu2#icp11" target="mov1#opm2#lgu2.password"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <LoginUnit gr:x="470" gr:y="220" id="mov1#opm2#lgu2" name="Login">
+      <KOLink id="mov1#opm2#lgu2#kln6" name="KOFlow6" to="mov1#opm2#kocu3" automaticCoupling="true"/>
+      <OKLink id="mov1#opm2#lgu2#oln12" name="OKFlow12" to="mov1#opm2#okcu2" automaticCoupling="true"/>
+    </LoginUnit>
+    <OKCollectorUnit gr:x="825" gr:y="135" id="mov1#opm2#okcu2" name="Succes"/>
+    <KOCollectorUnit gr:x="825" gr:y="340" id="mov1#opm2#kocu3" name="Failure"/>
+  </OperationUnits>
+</OperationModule>

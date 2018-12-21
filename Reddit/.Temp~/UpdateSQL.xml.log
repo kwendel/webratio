@@ -1,0 +1,27 @@
+[10 Oct 2018 15:22:13] DEBUG Executing SQL script
+[10 Oct 2018 15:22:13] INFO ================================================================================
+[10 Oct 2018 15:22:13] INFO onError= 'stop'
+[10 Oct 2018 15:22:13] INFO autoCommit= 'false'
+[10 Oct 2018 15:22:13] INFO username= 'postgres'
+[10 Oct 2018 15:22:13] INFO outputPath= '/home/kasper/Documents/Study/WebRatio_workspace/Reddit/.Temp~/UpdateSQL.xml'
+[10 Oct 2018 15:22:13] INFO outputLogPath= '/home/kasper/Documents/Study/WebRatio_workspace/Reddit/.Temp~/UpdateSQL.xml.log'
+[10 Oct 2018 15:22:13] INFO encoding= ''
+[10 Oct 2018 15:22:13] INFO driverClass= 'org.postgresql.Driver'
+[10 Oct 2018 15:22:13] INFO sqlScript= '/home/kasper/Documents/Study/WebRatio_workspace/Reddit/.Temp~/UpdateSQL.sql'
+[10 Oct 2018 15:22:13] INFO eventSocketPort= '39363'
+[10 Oct 2018 15:22:13] INFO statementSeparator= ';'
+[10 Oct 2018 15:22:13] INFO derby.system.home= '/home/kasper/Documents/Study/WebRatio_workspace/.metadata/.plugins/com.webratio.commons.db/derby'
+[10 Oct 2018 15:22:13] INFO password= 'password'
+[10 Oct 2018 15:22:13] INFO url= 'jdbc:postgresql://localhost:5432/reddit_clone'
+[10 Oct 2018 15:22:13] INFO ================================================================================
+[10 Oct 2018 15:22:13] INFO Connecting to the Database...
+[10 Oct 2018 15:22:13] INFO Database connection estabilished
+[10 Oct 2018 15:22:13] INFO transaction isolation: 2
+[10 Oct 2018 15:22:13] DEBUG ================================================================================
+[10 Oct 2018 15:22:13] DEBUG Executing SQL script file: /home/kasper/Documents/Study/WebRatio_workspace/Reddit/.Temp~/UpdateSQL.sql
+[10 Oct 2018 15:22:13] DEBUG Executing statement:  alter table "public"."post"  add column  "inappropriate"  bool
+[10 Oct 2018 15:22:13] DEBUG Executing statement:    alter table "public"."comment"  add column  "inappropriate"  bool
+[10 Oct 2018 15:22:13] DEBUG ================================================================================
+[10 Oct 2018 15:22:13] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[10 Oct 2018 15:22:13] INFO Database connection closed
+[10 Oct 2018 15:22:13] DEBUG Total time: 167 milliseconds

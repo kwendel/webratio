@@ -1,0 +1,83 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="5" gr:y="395" id="sv3#page27" name="Moderate" landmark="true">
+  <ContentUnits>
+    <GetUnit gr:x="5" gr:y="5" id="sv3#page27#gtu21" name="GetUserID" contextParameters="UserCtxParam">
+      <Link id="sv3#page27#gtu21#ln97" name="GetUser" to="sv3#page27#seu10" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <SelectorUnit gr:x="0" gr:y="110" id="sv3#page27#seu10" name="Channel Moderator" entity="ent2">
+      <Selector id="sv3#page27#seu10#su33" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page27#seu10#su33#rcond15" name="RoleCondition15" predicate="in" implied="false" role="rel1#role2"/>
+      </Selector>
+      <Link id="sv3#page27#seu10#ln98" name="Select Channel" to="sv3#page27#enu21" type="transport" validate="true">
+        <LinkParameter id="sv3#page27#seu10#ln98#par305" name="title_Channel [label]" source="ent2#att12Array" target="sv3#page27#enu21#sfld34_label"/>
+        <LinkParameter id="sv3#page27#seu10#ln98#par306" name="oid_channel_Channel [output]" source="ent2#att10Array" target="sv3#page27#enu21#sfld34_output"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit gr:x="195" gr:y="140" id="sv3#page27#enu21" name="Select Channel" linkOrder="sv3#page27#enu21#ln103">
+      <SelectionField id="sv3#page27#enu21#sfld34" name="Channel" type="string"/>
+      <Link id="sv3#page27#enu21#ln103" name="Select" to="sv3#page27#pwu16" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv3#page27#enu21#ln103#par315" name="Channel_RoleCondition18 [oid_channel]" source="sv3#page27#enu21#sfld34" target="sv3#page27#pwu16#su37#rcond18.ent2#att10"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="370" gr:y="0" id="sv3#page27#pwu16" name="Posts" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att22 ent1#att23 ent1#att14" linkOrder="sv3#page27#pwu16#ln101 sv3#page27#pwu16#ln102">
+      <Link id="sv3#page27#pwu16#ln101" name="Delete" to="sv3#dlu1" type="normal" validate="true">
+        <LinkParameter id="sv3#page27#pwu16#ln101#par309" name="oid_post_KeyCondition18 [oid_post]" source="data[].ent1#att5" target="sv3#dlu1#su34#kcond18.ent1#att5"/>
+        <LinkParameter id="sv3#page27#pwu16#ln101#par310" name="PostToRegistered User.oid_user_PASSING" source="data[].rel4#role8_userOID" passing="true"/>
+      </Link>
+      <Link id="sv3#page27#pwu16#ln102" name="Approve" to="sv3#mfu3" type="normal" validate="true">
+        <LinkParameter id="sv3#page27#pwu16#ln102#par307" name="false_inappropriate" sourceValue="false" target="sv3#mfu3.ent1#att14"/>
+        <LinkParameter id="sv3#page27#pwu16#ln102#par308" name="oid_post_KeyCondition19 [oid_post]" source="data[].ent1#att5" target="sv3#mfu3#su35#kcond19.ent1#att5"/>
+      </Link>
+      <Selector id="sv3#page27#pwu16#su37" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page27#pwu16#su37#rcond18" name="RoleCondition18" predicate="in" implied="false" role="rel3#role6"/>
+        <AttributesCondition id="sv3#page27#pwu16#su37#acond6" name="AttCondition6" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att14" value="true"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page27#enu21">
+          <layout:Field field="sv3#page27#enu21#sfld34"/>
+          <layout:Link link="sv3#page27#enu21#ln103"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page27#pwu16">
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att7"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="ent1#att22"/>
+          <layout:Attribute attribute="ent1#att23"/>
+          <layout:Attribute attribute="ent1#att14"/>
+          <layout:Link link="sv3#page27#pwu16#ln101"/>
+          <layout:Link link="sv3#page27#pwu16#ln102"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

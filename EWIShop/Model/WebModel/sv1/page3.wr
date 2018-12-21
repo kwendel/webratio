@@ -1,0 +1,63 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="105" gr:y="460" id="sv1#page3" name="Create New Product" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="30" gr:y="0" id="sv1#page3#enu1" name="Create Product" linkOrder="sv1#page3#enu1#ln3">
+      <Field id="sv1#page3#enu1#fld1" name="Name" type="string" modifiable="true"/>
+      <Field id="sv1#page3#enu1#fld2" name="Cost" type="float" modifiable="true"/>
+      <Field id="sv1#page3#enu1#fld3" name="Creation Date" type="date" modifiable="true"/>
+      <Link id="sv1#page3#enu1#ln3" name="Create" to="sv1#cru1" type="normal" validate="true">
+        <LinkParameter id="sv1#page3#enu1#ln3#par2" name="Cost_Cost" source="sv1#page3#enu1#fld2" target="sv1#cru1.ent1#att4"/>
+        <LinkParameter id="sv1#page3#enu1#ln3#par3" name="Creation Date_DateProduction" source="sv1#page3#enu1#fld3" target="sv1#cru1.ent1#att3"/>
+        <LinkParameter id="sv1#page3#enu1#ln3#par4" name="Name_Name" source="sv1#page3#enu1#fld1" target="sv1#cru1.ent1#att2"/>
+        <LinkParameter id="sv1#page3#enu1#ln3#par7" name="Category_Category.oid(ProductToCategory)" source="sv1#page3#enu1#sfld1" target="sv1#cru1.rel1#role1.ent2#att5"/>
+      </Link>
+      <SelectionField id="sv1#page3#enu1#sfld1" name="Category" type="string">
+        <Slot id="sv1#page3#enu1#sfld1#slot1" name="Label" label="true" output="false"/>
+        <Slot id="sv1#page3#enu1#sfld1#slot2" name="Value" label="false" output="true"/>
+      </SelectionField>
+    </EntryUnit>
+    <SelectorUnit gr:x="0" gr:y="120" id="sv1#page3#seu2" name="Category" entity="ent2">
+      <Link id="sv1#page3#seu2#ln4" name="Flow4" to="sv1#page3#enu1" type="transport" validate="true">
+        <LinkParameter id="sv1#page3#seu2#ln4#par5" name="Name_Category[Label]" source="ent2#att6Array" target="sv1#page3#enu1#sfld1#slot1"/>
+        <LinkParameter id="sv1#page3#seu2#ln4#par6" name="oid_Category[Value]" source="ent2#att5Array" target="sv1#page3#enu1#sfld1#slot2"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page3#enu1">
+          <layout:Link link="sv1#page3#enu1#ln3"/>
+          <layout:Field field="sv1#page3#enu1#fld1"/>
+          <layout:Field field="sv1#page3#enu1#fld2"/>
+          <layout:Field field="sv1#page3#enu1#fld3"/>
+          <layout:Field field="sv1#page3#enu1#sfld1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

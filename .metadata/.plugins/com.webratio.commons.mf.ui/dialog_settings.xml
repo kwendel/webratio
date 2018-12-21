@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.webratio.ide.ui.dialogs.EditEntryUnitDialog">
+		<item value="1148" key="DIALOG_WIDTH"/>
+		<item value="34" key="DIALOG_Y_ORIGIN"/>
+		<item value="386" key="DIALOG_X_ORIGIN"/>
+		<item value="817" key="DIALOG_HEIGHT"/>
+		<item value="1|Open Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="com.webratio.ide.ui.dialogs.EditSubUnitsDialog">
+		<item value="470" key="DIALOG_WIDTH"/>
+		<item value="34" key="DIALOG_Y_ORIGIN"/>
+		<item value="725" key="DIALOG_X_ORIGIN"/>
+		<item value="817" key="DIALOG_HEIGHT"/>
+		<item value="1|Open Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="com.webratio.ide.ui.properties.items.EntityPropertyItem$2.DialogSettings">
+	</section>
+</section>

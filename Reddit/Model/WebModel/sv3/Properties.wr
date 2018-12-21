@@ -1,0 +1,40 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Moderator" protected="true" homePage="sv3#page26" landmarks="sv3#page26 sv3#page27">
+  <OperationUnits>
+    <ConnectUnit gr:x="570" gr:y="160" id="sv3#cnu2" name="Subscribe User" relationship="rel2#role4">
+      <SourceSelector id="sv3#cnu2#su28" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#cnu2#su28#kcond15" name="KeyCondition15" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv3#cnu2#su29" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#cnu2#su29#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv3#cnu2#oln18" name="OKFlow18" to="sv3#page26" automaticCoupling="true" gr:bendpoints="-123,93,222,58"/>
+    </ConnectUnit>
+    <DeleteUnit gr:x="755" gr:y="375" id="sv3#dlu1" name="Delete Post" entity="ent1">
+      <Selector id="sv3#dlu1#su34" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu1#su34#kcond18" name="KeyCondition18" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu1#oln19" name="OKFlow19" to="sv3#seu14">
+        <LinkParameter id="sv3#dlu1#oln19#par311" name="PostToRegistered User.oid_user_PASSING_UserID [oid_user]" sourceLinkParameter="sv3#page27#pwu16#ln101#par310" target="sv3#seu14#su36#kcond20.userOID"/>
+      </OKLink>
+    </DeleteUnit>
+    <ModifyUnit gr:x="760" gr:y="520" id="sv3#mfu3" name="Remove inappropriate" entity="ent1">
+      <Selector id="sv3#mfu3#su35" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu3#su35#kcond19" name="KeyCondition19" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu3#oln23" name="OKFlow23" to="sv3#page27#pwu16" automaticCoupling="true" gr:bendpoints="-247,57,118,137"/>
+    </ModifyUnit>
+    <MailUnit gr:x="925" gr:y="280" id="sv3#mlu1" name="Notify User" format="plainText">
+      <SubjectTemplate xml:space="preserve">Your Post has been removed</SubjectTemplate>
+      <BodyTemplate xml:space="preserve">Your Post has been removed</BodyTemplate>
+      <OKLink id="sv3#mlu1#oln21" name="OKFlow21" to="sv3#page27" automaticCoupling="true" gr:bendpoints="-233,20,397,-215"/>
+    </MailUnit>
+    <SelectorUnit gr:x="910" gr:y="385" id="sv3#seu14" name="GetUserEmail" entity="User">
+      <Selector id="sv3#seu14#su36" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#seu14#su36#kcond20" name="UserID" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#seu14#oln20" name="OKFlow20" to="sv3#mlu1">
+        <LinkParameter id="sv3#seu14#oln20#par312" name="email_Mail - To" source="emailArray" target="sv3#mlu1.to"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</SiteView>

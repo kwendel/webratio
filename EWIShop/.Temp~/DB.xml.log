@@ -1,0 +1,87 @@
+[09 Oct 2018 17:22:31] Building database metadata model
+[09 Oct 2018 17:22:31] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@70ad2036, includeTables=true, username=postgres, outputLogPath=/home/kasper/Documents/Study/WebRatio_workspace/EWIShop/.Temp~/DB.xml.log, readIndexes=null, driverClass=org.postgresql.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.PostgreSQLMetaDataProvider, outputPath=/home/kasper/Documents/Study/WebRatio_workspace/EWIShop/.Temp~/DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=/home/kasper/Documents/Study/WebRatio_workspace/.metadata/.plugins/com.webratio.commons.db/derby, url=jdbc:postgresql://localhost:5432/ewishop, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=45629}
+[09 Oct 2018 17:22:31] URL: jdbc:postgresql://localhost:5432/ewishop
+[09 Oct 2018 17:22:31] Product name: PostgreSQL
+[09 Oct 2018 17:22:31] Product version: 9.5.14
+[09 Oct 2018 17:22:31] Driver name: PostgreSQL Native Driver
+[09 Oct 2018 17:22:31] Driver version: PostgreSQL 9.0 JDBC3 (build 801)
+[09 Oct 2018 17:22:31] Driver major version: 9
+[09 Oct 2018 17:22:31] Driver minor version: 0
+[09 Oct 2018 17:22:31] Identifier quote string: 0
+[09 Oct 2018 17:22:31] Retrieving schemas
+[09 Oct 2018 17:22:31]   Found schema: information_schema
+[09 Oct 2018 17:22:31]   Found schema: pg_catalog
+[09 Oct 2018 17:22:31]   Found schema: pg_toast_temp_1
+[09 Oct 2018 17:22:31]   Found schema: public
+[09 Oct 2018 17:22:31] Retrieving sequences
+[09 Oct 2018 17:22:31] Retrieving [TABLE, VIEW, SYNONYM] for schema 'information_schema'
+[09 Oct 2018 17:22:31] Retrieving [TABLE, VIEW, SYNONYM] for schema 'pg_catalog'
+[09 Oct 2018 17:22:31] Retrieving [TABLE, VIEW, SYNONYM] for schema 'pg_toast_temp_1'
+[09 Oct 2018 17:22:31] Retrieving [TABLE, VIEW, SYNONYM] for schema 'public'
+[09 Oct 2018 17:22:31]   Found 'public.category' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found 'public.group' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found 'public.group_module' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found 'public.module' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found 'public.product' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found 'public.shopping_cart' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found 'public.shopping_cart_product' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found 'public.user' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found 'public.user_group' [type = TABLE]
+[09 Oct 2018 17:22:31] Retrieving columns for 'public.category' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: name [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[09 Oct 2018 17:22:31] Retrieving primary keys for 'public.category' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found primary key column: oid
+[09 Oct 2018 17:22:31] Retrieving columns for 'public.group' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: groupname [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: module_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31] Retrieving primary keys for 'public.group' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found primary key column: oid
+[09 Oct 2018 17:22:31] Retrieving columns for 'public.group_module' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found column: group_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: module_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31] Retrieving primary keys for 'public.group_module' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found primary key column: group_oid
+[09 Oct 2018 17:22:31]   Found primary key column: module_oid
+[09 Oct 2018 17:22:31] Retrieving columns for 'public.module' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: moduleid [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: modulename [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[09 Oct 2018 17:22:31] Retrieving primary keys for 'public.module' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found primary key column: oid
+[09 Oct 2018 17:22:31] Retrieving columns for 'public.product' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: name [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: dateproduction [type = date][SQL/XOPEN type = 91][size = 13][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: cost [type = float8][SQL/XOPEN type = 8][size = 17][dec. digits = 17]
+[09 Oct 2018 17:22:31]   Found column: category_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31] Retrieving primary keys for 'public.product' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found primary key column: oid
+[09 Oct 2018 17:22:31] Retrieving columns for 'public.shopping_cart' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: user_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31] Retrieving primary keys for 'public.shopping_cart' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found primary key column: oid
+[09 Oct 2018 17:22:31] Retrieving columns for 'public.shopping_cart_product' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found column: shopping_cart_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: product_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31] Retrieving primary keys for 'public.shopping_cart_product' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found primary key column: shopping_cart_oid
+[09 Oct 2018 17:22:31]   Found primary key column: product_oid
+[09 Oct 2018 17:22:31] Retrieving columns for 'public.user' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found column: oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: username [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: password [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: email [type = varchar][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: group_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31] Retrieving primary keys for 'public.user' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found primary key column: oid
+[09 Oct 2018 17:22:31] Retrieving columns for 'public.user_group' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found column: user_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31]   Found column: group_oid [type = int4][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[09 Oct 2018 17:22:31] Retrieving primary keys for 'public.user_group' [type = TABLE]
+[09 Oct 2018 17:22:31]   Found primary key column: user_oid
+[09 Oct 2018 17:22:31]   Found primary key column: group_oid
+[09 Oct 2018 17:22:31] Database metadata retrieved (98 ms)
+[09 Oct 2018 17:22:31] Database connection closed

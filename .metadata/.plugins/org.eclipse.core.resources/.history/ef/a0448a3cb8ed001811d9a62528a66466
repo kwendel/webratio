@@ -1,0 +1,9 @@
+
+<Warnings>
+<Warning xpath="id('db1')" rootXPath="/WebProject/DataModel" key="DISCONNECTED_DATABASE" tab="mapping" label="reddit_clone">
+        <Message>The database 'reddit_clone' is not connected: unable to perform a deep analysis</Message>
+        <Resolution class="com.webratio.ide.ui.resources.RefreshDatabaseResolutionGenerator">Refresh the database</Resolution>
+      </Warning>
+    
+
+</Warnings>

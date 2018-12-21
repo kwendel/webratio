@@ -1,0 +1,59 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="450" gr:y="225" id="sv1#page2" name="Product Details" linkOrder="sv1#page2#ln2">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv1#page2#dau1" name="Product Details" entity="ent1" displayAll="true">
+      <Selector id="sv1#page2#dau1#su1" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#page2#dau1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#page2#dau1#ln5" name="Flow5" to="sv1#page2#dau2" type="transport" validate="true">
+        <LinkParameter id="sv1#page2#dau1#ln5#par8" name="ProductToCategory.oid_KeyCondition2 [oid]" source="data.rel1#role1_ent2#att5" target="sv1#page2#dau2#su2#kcond2.ent2#att5"/>
+      </Link>
+    </DataUnit>
+    <DataUnit gr:x="190" gr:y="5" id="sv1#page2#dau2" name="Category" entity="ent2" displayAll="true">
+      <Selector id="sv1#page2#dau2#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#page2#dau2#su2#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page2#dau1">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att7"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page2#dau2">
+          <layout:Attribute attribute="ent2#att6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv1#page2#ln2" name="Back to Home" to="sv1#page1" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-117,-118,133,-58"/>
+</Page>
